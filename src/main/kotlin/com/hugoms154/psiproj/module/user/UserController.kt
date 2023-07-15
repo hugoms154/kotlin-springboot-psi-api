@@ -13,7 +13,7 @@ class UserController(
   fun create(@RequestBody @Valid user: CreateUserDto): UserModel = this.repository.save(user.toModel())
 
   @GetMapping
-  fun list(): Iterable<UserModel> = this.repository.findAll()
+  fun list(): List<UserModel> = this.repository.findAll()
 
   @GetMapping("{userId}")
   fun detail(@PathVariable userId: Long): UserModel? = this.repository.findByIdOrNull(userId)

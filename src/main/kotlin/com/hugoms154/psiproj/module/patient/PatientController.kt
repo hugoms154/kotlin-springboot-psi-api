@@ -14,7 +14,7 @@ class PatientController(
   fun create(@RequestBody @Valid patient: CreatePatientDto): PatientModel = this.patientService.create(patient)
 
   @GetMapping
-  fun list(): Iterable<PatientModel> = this.repository.findAll()
+  fun list(): List<PatientModel> = this.repository.findAll()
 
   @GetMapping("{patientId}")
   fun detail(@PathVariable patientId: Long): PatientModel? = this.repository.findByIdOrNull(patientId)

@@ -13,7 +13,7 @@ class WorkplaceController(
   fun create(@RequestBody @Valid patient: CreateWorkplaceDto): WorkplaceModel = this.repository.save(patient.toModel())
 
   @GetMapping
-  fun list(): Iterable<WorkplaceModel> = this.repository.findAll()
+  fun list(): List<WorkplaceModel> = this.repository.findAll()
 
   @GetMapping("{workplaceId}")
   fun detail(@PathVariable workplaceId: Long): WorkplaceModel? = this.repository.findByIdOrNull(workplaceId)
