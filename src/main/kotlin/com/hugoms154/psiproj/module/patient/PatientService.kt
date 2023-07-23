@@ -16,7 +16,8 @@ class PatientService(
 ) {
 
   fun create(createPatientDto: CreatePatientDto): PatientModel {
-    val workplaceModel = workplaceRepository.findByIdOrNull(createPatientDto.workplaceId) ?: throw Exception("Workplace not found")
+    val workplaceModel =
+      workplaceRepository.findByIdOrNull(createPatientDto.workplaceId) ?: throw Exception("Workplace not found")
     val patientModel = createPatientDto.toModel(workplaceModel)
     return patientRepository.save(patientModel)
   }

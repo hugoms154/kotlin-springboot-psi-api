@@ -19,6 +19,6 @@ class ExceptionHandler {
       CustomError(castedError.field, castedError.defaultMessage)
     }
 
-    return ResponseEntity.badRequest().body(ExceptionResponse("error message?", errors));
+    return ResponseEntity.badRequest().body(ExceptionResponse("error message?", errors))
   }
 }

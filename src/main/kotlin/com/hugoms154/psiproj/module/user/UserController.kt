@@ -1,6 +1,5 @@
 package com.hugoms154.psiproj.module.user
 
-import jakarta.validation.Valid
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.web.bind.annotation.*
 
@@ -9,8 +8,6 @@ import org.springframework.web.bind.annotation.*
 class UserController(
   private val repository: UserRepository,
 ) {
-  @PostMapping
-  fun create(@RequestBody @Valid user: CreateUserDto): UserModel = this.repository.save(user.toModel())
 
   @GetMapping
   fun list(): List<UserModel> = this.repository.findAll()

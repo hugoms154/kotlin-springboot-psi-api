@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("/api/patient")
 class PatientController(
   private val repository: PatientRepository,
-  private val patientService: PatientService
+  private val patientService: PatientService,
 ) {
   @PostMapping
   fun create(@RequestBody @Valid patient: CreatePatientDto): PatientModel = this.patientService.create(patient)

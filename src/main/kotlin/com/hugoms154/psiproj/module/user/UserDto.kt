@@ -22,8 +22,8 @@ data class CreateUserDto(
   var email: String,
 )
 
-fun CreateUserDto.toModel() = UserModel(
-  this.name, this.surname, this.password, this.email
+fun CreateUserDto.toModel(password: String) = UserModel(
+  this.name, this.surname, password, this.email
 )
 
 data class UpdateUserDto(
@@ -46,5 +46,5 @@ data class UpdateUserDto(
 )
 
 fun UpdateUserDto.toModel() = UserModel(
-  this.name, this.surname, this.password, this.email, this.id
+  this.name, this.surname, this.password, this.email, id = this.id
 )
