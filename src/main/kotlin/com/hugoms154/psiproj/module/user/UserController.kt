@@ -4,7 +4,7 @@ import org.springframework.data.repository.findByIdOrNull
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 class UserController(
   private val repository: UserRepository,
 ) {

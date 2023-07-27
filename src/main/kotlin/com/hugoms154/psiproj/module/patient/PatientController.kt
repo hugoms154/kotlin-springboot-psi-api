@@ -5,7 +5,7 @@ import org.springframework.data.repository.findByIdOrNull
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/patient")
+@RequestMapping("/api/patients")
 class PatientController(
   private val repository: PatientRepository,
   private val patientService: PatientService,

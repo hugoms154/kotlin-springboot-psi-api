@@ -5,7 +5,7 @@ import org.springframework.data.repository.findByIdOrNull
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/workplace")
+@RequestMapping("/api/workplaces")
 class WorkplaceController(
   private val repository: WorkplaceRepository
 ) {
